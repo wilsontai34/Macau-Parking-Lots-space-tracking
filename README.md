@@ -47,7 +47,7 @@ Once the parking difficulty problem is solved, it will not only relieve the park
 
 ### Construction
 
-![图片 1](./assets/construction.png)
+![图片 1](assets/construction.png)
 
 As figure depicts above, we divided the construction of this project into three levels, data level, technical level and function level. Firstly, the data source all project basis on comes from the DSAT official website. We contribute the project by Web Crawler, SQLite, Visualization with Plotly, and Time-series Forecasting. All details of each area will be displayed as follows. Generally, the first three parts are almost the engineering part and the rests are the analysis part, which will be discussed spicificly in chapter 4.
 
