@@ -2,13 +2,11 @@
 
 
 
-<center>  Young Chin, Io San Tai, Mingyang Ma
+# Young Chin, Io San Tai, Mingyang Ma
 
-<center> 2220023347 , 2220025580 , 2220019800
+# Master of Applied Mathematics and Data Science,
 
-<center>Class of E1-2, Master of Applied Mathematics and Data Science,
-
-<center> Faculty of Innovation and Engineering, Macau University of Science and Technology
+# Faculty of Innovation and Engineering, Macau University of Science and Technology
 
 
 
@@ -18,7 +16,7 @@ With the extremly increacing of cars in Macao, public parking lots are in conges
 
 Github:https://github.com/wilsontai34/Macau-Parking-Lots-space-tracking
 
-Video:
+Video:Coming soon
 
 ## Introduction
 
