@@ -2,15 +2,15 @@
 
 
 
-# Young Chin, Io San Tai, Mingyang Ma
+### Young Chin, Io San Tai, Mingyang Ma
 
-# Master of Applied Mathematics and Data Science,
+### Master of Applied Mathematics and Data Science,
 
-# Faculty of Innovation and Engineering, Macau University of Science and Technology
+### Faculty of Innovation and Engineering, Macau University of Science and Technology
 
 
 
-<center>Abstract
+## Abstract
 
 With the extremly increacing of cars in Macao, public parking lots are in congestion and trouble. This project called *Parking in Macau*, could provide a more intuitive data dashboard with real-time data updating and forecasting. We collect the data from DSAT by web crawler, saved in our database by SQLite. Besides, we visualize these data on the website by *plotly*, including live tracks, dropdown selection, heat-map, and nearby recommendation. In addition, we constructed a forecasting model for parking space using both statistics and time-series models. In the end, some suggestions and solutions were given to improve a better data center for parking lots.
 
