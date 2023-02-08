@@ -179,7 +179,7 @@ Due to the different location of these all sixty four parking lots, we have sele
 
 Firstly, we make pre-processing of the data. Here we did a caculation of log with the data. Then, in the model part, we select a series of time-series models, including SimpleExpSmoothing, ARIMA, SARIMAX, and Auto-ARIMA. To make the performance of time-series forecsting clearly, we plot the fitted data and the result of forecasting as the figure shows. As we can see from the picture, the model didn't show perfect result but acceptable shape.
 
-<img src=./assets/image-20230204230616206.png alt="image-20230204230616206" width = 400 hight = 300>
+<img src="./assets/prediction.png" alt="image-20230204230616206" width = 400 hight = 300>
 
 To make a deeper step, we try to make a decomposition of time series as figure x. The result of decomposition shows us that it departs the seasonal, but the trend is still contain some seasonal.
 
