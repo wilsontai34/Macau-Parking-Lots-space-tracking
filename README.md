@@ -1,6 +1,6 @@
 # Parking in Macau: A Real-time Data Dashboard and Forecasting of Parking Space
 
-
+<img src="./assets/poster.png" width = 600 hight = 300>
 
 ### Young Chin, Io San Tai, Mingyang Ma
 ### Master of Applied Mathematics and Data Science,
@@ -14,7 +14,7 @@ With the extremly increacing of cars in Macao, public parking lots are in conges
 
 Github:https://github.com/wilsontai34/Macau-Parking-Lots-space-tracking
 
-Video: Coming soon...
+Video: https://youtu.be/2cjz-aCw7P0
 
 ## Introduction
 
