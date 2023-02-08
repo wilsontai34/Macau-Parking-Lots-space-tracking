@@ -131,7 +131,7 @@ In this part we will classify Macau parking lots by function. At the same time, 
 
 We captured data from 60 parking lots in Macau between December 26th, 2022 to December 28th, 2022, with a frequency of about 1 time/2 minutes. The data captured includes the remaining spaces for cars, motorcycles, electric vehicles and other vehicle types in different parking lots at different moments in time. 
 
-<img src="/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/58.png" alt="以59号停车场为例" style="zoom:67%;" />
+<img src=./assets/58.png alt="以59号停车场为例" style="zoom:67%;" />
 
 Considering that all parking lots are set up with car parking spaces, and the problem of difficult parking generally occurs in the type of cars. Therefore, only the car data were statistically analyzed here.
 
@@ -141,17 +141,17 @@ The data from 60 parking lots were first processed. We found that the 2nd, 11th,
 
 Since the data of parking lots generally change within a one-day cycle, the data of these three days were selected separately for plotting. After plotting, it is found that there are two obvious trends in the single-day data fluctuations of the parking lots: the remaining parking spaces of the 25th parking lots, such as the 8th, 9th and 10th, show a "U" shape with more spaces in the morning and evening and less spaces at noon; the opposite is true for the 18th parking lots, such as the 3rd, 4th and 5th, which show an "inverted U" shape. In addition, the remaining parking spaces in the 43rd and 47th parking lots have a "W" shape; the remaining parking spaces in the 48th and 49th parking lots are huge and almost constant. The rest of the parking lots have irregular variations, while these parking lots are characterized by a small number of parking spaces.Combine with people's daily routine, we believe that the parking lots around the working areas have a "U" shape, and the parking lots around the residential areas have an "inverted U" shape. Therefore, it can be concluded that there are currently 18 parking lots in Macau mainly serving the parking needs of residents in the surrounding residential areas, and 25 parking lots mainly serving the commuting and business parking needs of the surrounding office areas.
 
-<img src="/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/date28.png" alt="28号车位数量折线图" style="zoom:67%;" />
+<img src=./assets/date28.png alt="28号车位数量折线图" style="zoom:67%;" />
 
 Next we counted the times when there were the least and most parking spaces (in hours) in these parking lots using the data from 26 to 28 days, and plotted the following scatter plot. The blue dots indicate the time with the least number of parking spaces in the different parking lots, and the red dots indicate the time with the most number of parking spaces in the different parking lots.
 
-<img src="/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/MAXMIN.png" alt="最大最小车位数量" style="zoom:67%;" />
+<img src=./assets/MAXMIN.png alt="最大最小车位数量" style="zoom:67%;" />
 
 From the graph, we can find that the distribution of the least time is relatively scattered, mostly between 0:00 and 15:00, while the time with the highest number of parking spaces is mainly concentrated in the period from 15:00 to 0:00. 
 
 In addition according to the maximum number scatter plot with coordinates, one can learn the time when the maximum number of parking spaces is available in different parking lots. 
 
-<img src="/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/MAX.png" alt="最大车位数量" style="zoom:67%;" />
+<img src=./assets/MAX.png alt="最大车位数量" style="zoom:67%;" />
 
 Since there is an obvious regularity in the change of parking spaces in these parking lots, this plot can help residents to choose other parking lots when there is no space in the selected parking spot.
 
@@ -164,7 +164,7 @@ In this part we want to build a simple prediction model for the number of parkin
 
 where Y2 represents the number of parking spaces at the moment we want to predict, Y1 represents the number of current parking spaces, X2 represents the number of parking spaces at the moment we want to predict at the same moment in history, and X1 represents the number of parking spaces at the current moment at the same moment in history. Using the existing data, the data of the 26th and 27th days can be used as X, and the data of the 28th day can be used as Y. As an example, suppose the number of parking spaces in parking lot 3 is known at 12:00 on the 28th, and we wish to predict the number of parking spaces in that parking lot two hours later. We will take the difference of the number of parking spaces in the same time period on 26 and 27 respectively, sum them up and take the average, and then add them with the number of parking spaces at 12:00 on the 28th to get the predicted number of parking spaces.
 
-<img src="/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/forecast.png" alt="预测" style="zoom:67%;" />
+<img src=./assets/forecast.png alt="预测" style="zoom:67%;" />
 
 Through this model, residents can know the number of parking spaces in the parking lot at the future moment in advance. This feature will help residents to make better planning for their trips. 
 
@@ -179,7 +179,7 @@ Due to the different location of these all sixty four parking lots, we have sele
 
 Firstly, we make pre-processing of the data. Here we did a caculation of log with the data. Then, in the model part, we select a series of time-series models, including SimpleExpSmoothing, ARIMA, SARIMAX, and Auto-ARIMA. To make the performance of time-series forecsting clearly, we plot the fitted data and the result of forecasting as the figure shows. As we can see from the picture, the model didn't show perfect result but acceptable shape.
 
-<img src="/Users/gechin/Library/Application Support/typora-user-images/image-20230204230616206.png" alt="image-20230204230616206" width = 400 hight = 300>
+<img src=./image-20230204230616206.png alt="image-20230204230616206" width = 400 hight = 300>
 
 To make a deeper step, we try to make a decomposition of time series as figure x. The result of decomposition shows us that it departs the seasonal, but the trend is still contain some seasonal.
 
