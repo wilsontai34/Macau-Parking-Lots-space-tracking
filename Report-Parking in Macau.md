@@ -16,9 +16,9 @@
 
 With the extremly increacing of cars in Macao, public parking lots are in congestion and trouble. This project called *Parking in Macau*, could provide a more intuitive data dashboard with real-time data updating and forecasting. We collect the data from DSAT by web crawler, saved in our database by SQLite. Besides, we visualize these data on the website by *plotly*, including live tracks, dropdown selection, heat-map, and nearby recommendation. In addition, we constructed a forecasting model for parking space using both statistics and time-series models. In the end, some suggestions and solutions were given to improve a better data center for parking lots.
 
-Github:https://github.com/wilsontai34/Macau-Parking-Lots-space-tracking
+Github: https://github.com/wilsontai34/Macau-Parking-Lots-space-tracking
 
-Video:
+Video: https://youtu.be/2cjz-aCw7P0
 
 ## Introduction
 
@@ -49,7 +49,7 @@ Once the parking difficulty problem is solved, it will not only relieve the park
 
 ### Construction
 
-![图片 1](./assets/construction.png)
+<img src="./assets/construction.png" alt="图片 1" width = 600 hight = 300>
 
 As figure depicts above, we divided the construction of this project into three levels, data level, technical level and function level. Firstly, the data source all project basis on comes from the DSAT official website. We contribute the project by Web Crawler, SQLite, Visualization with Plotly, and Time-series Forecasting. All details of each area will be displayed as follows. Generally, the first three parts are almost the engineering part and the rests are the analysis part, which will be discussed spicificly in chapter 4.
 
@@ -59,7 +59,7 @@ Web Crawler is a useful tool to get the data from DSAT. This official website li
 
 Thanks for Urllib (a library which related website application), we can easily get the information of the whole website. One thing deserved to pay attention is that the way of the page update is though sending a package with new update data, so we can catch the package at the moment of page updating. Then, we parse the package, transform it into HTML and catch the useful data by Regular Expression, including the name of parking lot, the update time, the number of left parking space with different types.Because of the updating, we have to make the web crawler work following the path of the frequency of page updating. By doing so, the real-time data can be caught by web crawler automatically.
 
-<img src="./assets/website.png" alt="Picture2" style="zoom:50%;" />
+<img src="./assets/website.png" alt="Picture2" width = 400 hight = 300>
 
 ### Database
 
@@ -75,7 +75,7 @@ After using a series tools of visulization, such as matplotlib, echarts and othe
 
 *Plotly* also offers us a easy way to set your visualization on website. It's more convenient for client without too much files. Just an url could show you a wonderful dashboard with real-time changing data of parking.
 
-![](./assets/dashboard.png)
+<img src="./assets/dashboard.png" width = 400 hight = 300>
 
 ## Visualization
 
@@ -89,15 +89,15 @@ The plot presents trend of space at every parking lots. In this section, trackin
 
 Subplots display space changing of every category around 24 hours. They can provide history data for user to estimate space and schedule daily plan. Besides, the plot updates time is 5 seconds. 
 
-![](./assets/dashboard.png)
+<img src="./assets/dashboard.png" width = 400 hight = 300>
 
-![Picture2](./assets/website.png)
+<img src="./assets/website.png" alt="Picture2" width = 400 hight = 300>
 
-![WechatIMG4513](./assets/real_live_tracking.png)
+<img src="./assets/real_live_tracking.png" alt="WechatIMG4513" width = 400 hight = 300>
 
 There are 63 public parking lots in Macau, which means it’s not proper to display all information in one single page. Thus, a drop bar is designed for selecting which parking lot they are interest, then tracking table and recommend table will be updated to the selected parking lot.
 
-![](./assets/dropdown-1.png)
+<img src="./assets/dropdown-1.png" width = 400 hight = 300>
 
 ### Parking Condition with Heat-map
 
@@ -107,14 +107,13 @@ Heat Map provide a full picture of Macau S.A.R with tags of public parking lot. 
   <img src=./assets/heatmap.png width = '300' hight= '200'>
   <img src=./assets/detail_map.png> 
 
-
 ### Near Recommendation
 
 Every city has the same traffic problem, that’s popular area. With more people on same area, the possibility of traffic jam will be higher. To solve this problem, it cannot only show how many spaces is left in every car park, guiding them to other nearest car park seems to be a solution. Therefore, near parking lots is built for finding other available car park if the one you are looking for is full. It propose an alternative way for making a right, fast and comfort travel experience instead of waiting a long time for a space.
 
 Making recommendation to users automatically is no longer a rare thing. In this project, we make a *recommend module* based on the driving distance between different locations of parking space and the real-time situation of parking pace.
 
-![Picture7](./assets/near_recommend.png)
+<img src="./assets/near_recommend.png" alt="Picture7" style="zoom: 67%;" />
 
 To be honest, calculating the distance of each location through its longtitude and latitude is unsuitable and useless. Therefore, we find other way to caculate the distance of each location, the route API from amap(aka Gaode Map). 
 
@@ -136,7 +135,7 @@ In this part we will classify Macau parking lots by function. At the same time, 
 
 We captured data from 60 parking lots in Macau between December 26th, 2022 to December 28th, 2022, with a frequency of about 1 time/2 minutes. The data captured includes the remaining spaces for cars, motorcycles, electric vehicles and other vehicle types in different parking lots at different moments in time. 
 
-![以59号停车场为例](/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/58.png)
+<img src=./assets/58.png alt="以59号停车场为例" style="zoom:67%;" />
 
 Considering that all parking lots are set up with car parking spaces, and the problem of difficult parking generally occurs in the type of cars. Therefore, only the car data were statistically analyzed here.
 
@@ -146,17 +145,17 @@ The data from 60 parking lots were first processed. We found that the 2nd, 11th,
 
 Since the data of parking lots generally change within a one-day cycle, the data of these three days were selected separately for plotting. After plotting, it is found that there are two obvious trends in the single-day data fluctuations of the parking lots: the remaining parking spaces of the 25th parking lots, such as the 8th, 9th and 10th, show a "U" shape with more spaces in the morning and evening and less spaces at noon; the opposite is true for the 18th parking lots, such as the 3rd, 4th and 5th, which show an "inverted U" shape. In addition, the remaining parking spaces in the 43rd and 47th parking lots have a "W" shape; the remaining parking spaces in the 48th and 49th parking lots are huge and almost constant. The rest of the parking lots have irregular variations, while these parking lots are characterized by a small number of parking spaces.Combine with people's daily routine, we believe that the parking lots around the working areas have a "U" shape, and the parking lots around the residential areas have an "inverted U" shape. Therefore, it can be concluded that there are currently 18 parking lots in Macau mainly serving the parking needs of residents in the surrounding residential areas, and 25 parking lots mainly serving the commuting and business parking needs of the surrounding office areas.
 
-![28号车位数量折线图](/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/date28.png)
+<img src=./assets/date28.png alt="28号车位数量折线图" style="zoom:67%;" />
 
 Next we counted the times when there were the least and most parking spaces (in hours) in these parking lots using the data from 26 to 28 days, and plotted the following scatter plot. The blue dots indicate the time with the least number of parking spaces in the different parking lots, and the red dots indicate the time with the most number of parking spaces in the different parking lots.
 
-![最大最小车位数量](/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/MAXMIN.png)
+<img src=./assets/MAXMIN.png alt="最大最小车位数量" style="zoom:67%;" />
 
 From the graph, we can find that the distribution of the least time is relatively scattered, mostly between 0:00 and 15:00, while the time with the highest number of parking spaces is mainly concentrated in the period from 15:00 to 0:00. 
 
 In addition according to the maximum number scatter plot with coordinates, one can learn the time when the maximum number of parking spaces is available in different parking lots. 
 
-![最大车位数量](/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/MAX.png)
+<img src=./assets/MAX.png alt="最大车位数量" style="zoom:67%;" />
 
 Since there is an obvious regularity in the change of parking spaces in these parking lots, this plot can help residents to choose other parking lots when there is no space in the selected parking spot.
 
@@ -166,9 +165,10 @@ Since there is an obvious regularity in the change of parking spaces in these pa
 In this part we want to build a simple prediction model for the number of parking spaces manually using the existing data. For the same parking lot, when the number of parking spaces at the current moment is known, the number can be combined with the trend of parking space change on the same moment on different dates with the same trend to achieve the purpose of predicting the number of parking spaces in the short time period in the future.  The model expression is：
 
 <div align=center>Y2 = Y1 + (X2 - X1),<div align=left><br> 
+
 where Y2 represents the number of parking spaces at the moment we want to predict, Y1 represents the number of current parking spaces, X2 represents the number of parking spaces at the moment we want to predict at the same moment in history, and X1 represents the number of parking spaces at the current moment at the same moment in history. Using the existing data, the data of the 26th and 27th days can be used as X, and the data of the 28th day can be used as Y. As an example, suppose the number of parking spaces in parking lot 3 is known at 12:00 on the 28th, and we wish to predict the number of parking spaces in that parking lot two hours later. We will take the difference of the number of parking spaces in the same time period on 26 and 27 respectively, sum them up and take the average, and then add them with the number of parking spaces at 12:00 on the 28th to get the predicted number of parking spaces.
 
-![预测](/Users/gechin/Course/Open-Source Tool for Data Science/Parking- report/assets/forecast.png)
+<img src=./assets/forecast.png alt="预测" style="zoom:67%;" />
 
 Through this model, residents can know the number of parking spaces in the parking lot at the future moment in advance. This feature will help residents to make better planning for their trips. 
 
@@ -183,17 +183,17 @@ Due to the different location of these all sixty four parking lots, we have sele
 
 Firstly, we make pre-processing of the data. Here we did a caculation of log with the data. Then, in the model part, we select a series of time-series models, including SimpleExpSmoothing, ARIMA, SARIMAX, and Auto-ARIMA. To make the performance of time-series forecsting clearly, we plot the fitted data and the result of forecasting as the figure shows. As we can see from the picture, the model didn't show perfect result but acceptable shape.
 
-![image-20230204230616206](/Users/gechin/Library/Application Support/typora-user-images/image-20230204230616206.png)
+<img src=./assets/prediction.png width = 400 hight = 300>
 
 To make a deeper step, we try to make a decomposition of time series as figure x. The result of decomposition shows us that it departs the seasonal, but the trend is still contain some seasonal.
 
-![image-20230203230044537](./assets/decomposition.png)
+<img src="./assets/decomposition.png" alt="image-20230203230044537" width = 400 hight = 300>
 
 Therefore, we want to optimize the performance by selecting suitable frequency, which is the key parameter of ARIMA model. We know that the frenquency of the time series could be closed to the flat node. We can see the whole spectrum plot reduced quickly at first. After extracting the first ten points, we can find that the second point is the flat node. Its value that about 25 is considered as the frequency of our time series model.
 
-![image-20230203222943113](assets/spectrum.png)
+<img src="assets/spectrum.png" alt="image-20230203222943113" width = 400 hight = 300>
 
-![image-20230203223315764](assets/detail_spectrum.png)
+<img src="assets/detail_spectrum.png" alt="image-20230203223315764" width = 400 hight = 300>
 
 Unfortunately, after we try a few methods, it still didn't show us a good result we think. Although, the model made a good simulation to the original data, the prediction is not good enough to be presented. We guess the possible reasons and solutions are as follows.
 
